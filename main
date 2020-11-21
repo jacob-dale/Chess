@@ -1,0 +1,24 @@
+from graphics import *
+from global import *
+
+global selected_square
+global win
+global white
+global black
+
+win = GraphWin("My window", 600, 600)
+win.setBackground(color_rgb(255, 255, 255))
+print("My Chess Program")
+board = Board()
+board.draw()
+white = Player(False)
+white.draw()
+black = Player(True)
+black.draw()
+for i in range(100):
+    moveWhite()
+    redraw()
+    moveBlack()
+    redraw()
+win.getMouse()
+win.close()
